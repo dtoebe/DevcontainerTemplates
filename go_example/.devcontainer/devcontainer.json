@@ -1,0 +1,10 @@
+{
+  "name": "My Golang Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/go:1.25",
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": { "label": "Go HTTP", "requireLocalPort": true }
+  },
+  "appPort": ["8080:8080"],
+  "postCreateCommand": "go install golang.org/x/tools/gopls@latest && go mod tidy && go version"
+}
